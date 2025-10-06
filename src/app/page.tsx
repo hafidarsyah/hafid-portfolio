@@ -1,18 +1,11 @@
 export default function Home() {
   return (
-    <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        My Portfolio
-      </h1>
-      <p className="mb-4">
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
+    <section className="max-w-4xl mx-auto p-6">
+      <h1 className="text-4xl font-bold">Halo, saya Nama Kamu.</h1>
+      <p className="mt-4 text-lg">
+        Saya developer / designer yang membuat hal-hal keren.
       </p>
-      <div className="my-8">
-      </div>
+      {/* Tambahkan Projects, Skills, dan Contact */}
     </section>
   );
 }

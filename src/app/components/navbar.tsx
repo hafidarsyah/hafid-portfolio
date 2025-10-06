@@ -1,21 +1,19 @@
 import Link from "next/link";
-import {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
+import { ThemeToggle } from "./theme-toggle";
 
-export function Navbar() {
+export default function Navbar() {
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild>
-            <Link href="/docs">Documentation</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+    <nav className="w-full border-b py-4">
+      <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
+        <Link href="/" className="font-semibold">
+          Nama Kamu
+        </Link>
+        <div className="flex items-center gap-4">
+          <Link href="/projects">Projects</Link>
+          <Link href="/about">About</Link>
+          <ThemeToggle />
+        </div>
+      </div>
+    </nav>
   );
 }
