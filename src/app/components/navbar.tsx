@@ -1,11 +1,21 @@
-import { Link, NavigationMenuItem, NavigationMenuLink } from "@radix-ui/react-navigation-menu";
+import Link from "next/link";
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuLink,
+} from "@/components/ui/navigation-menu";
 
 export function Navbar() {
   return (
-    <NavigationMenuItem>
-      <NavigationMenuLink asChild>
-        <Link href="/docs">Documentation</Link>
-      </NavigationMenuLink>
-    </NavigationMenuItem>
-  )
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild>
+            <Link href="/docs">Documentation</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
+  );
 }
