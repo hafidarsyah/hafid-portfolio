@@ -1,11 +1,19 @@
-import { Link, NavigationMenuItem, NavigationMenuLink } from "@radix-ui/react-navigation-menu";
+import Link from "next/link";
+import { ThemeToggle } from "./theme-toggle";
 
-export function Navbar() {
+export default function Navbar() {
   return (
-    <NavigationMenuItem>
-      <NavigationMenuLink asChild>
-        <Link href="/docs">Documentation</Link>
-      </NavigationMenuLink>
-    </NavigationMenuItem>
-  )
+    <nav className="w-full border-b py-4">
+      <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
+        <Link href="/" className="font-semibold">
+          Nama Kamu
+        </Link>
+        <div className="flex items-center gap-4">
+          <Link href="/projects">Projects</Link>
+          <Link href="/about">About</Link>
+          <ThemeToggle />
+        </div>
+      </div>
+    </nav>
+  );
 }
