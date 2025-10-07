@@ -21,16 +21,11 @@ export default function Navbar() {
     <nav className="bg-background fixed w-full z-20 top-0 start-0 border-b border-border">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo */}
-        <a href="https://flowbite.com/" className="flex items-center space-x-3">
-          {/* <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8"
-            alt="Logo"
-          /> */}
+        <Link href="/" className="flex items-center space-x-3">
           <span className="self-center text-2xl font-semibold whitespace-nowrap">
             Hafid
           </span>
-        </a>
+        </Link>
 
         {/* CTA Button & Mobile Menu Toggle */}
         <div className="flex md:order-2 space-x-3 md:space-x-0">
@@ -38,12 +33,11 @@ export default function Navbar() {
 
           <Button
             variant="ghost"
+            size="icon"
             className="md:hidden border border-border"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Open main menu"
-            size="icon"
           >
-            <span className="sr-only">Open main menu</span>
+            <span className="sr-only">Toggle menu</span>
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
@@ -51,7 +45,7 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <div
           className={cn(
-            "items-center justify-between w-full md:flex md:w-auto md:order-1 transition-all duration-300",
+            "items-center justify-between w-full md:flex md:w-auto md:order-1",
             isOpen ? "block" : "hidden"
           )}
         >
