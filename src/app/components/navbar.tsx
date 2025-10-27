@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Code, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -31,17 +31,16 @@ export default function Navbar() {
         scrolled ? "border-b border-border" : "border-b-0"
       )}
     >
-      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between p-4">
-        <Link href="/" className="flex items-center gap-3">
-          <Button size="icon-sm" variant="outline" className="cursor-pointer">
-            <Code className="h-4 w-4" />
-          </Button>
-          <span className="text-2xl font-semibold">Hafid</span>
+      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between p-3.5">
+        <Link href="/" className="text-2xl font-semibold">
+          Hafid
         </Link>
 
         <div className="flex items-center gap-3 md:order-2">
-          <Button variant="outline" className="hidden md:block cursor-pointer">
-            Unduh CV
+          <Button variant="ghost" className="hidden md:flex" asChild>
+            <Link href="/cv.pdf" download>
+              Download CV
+            </Link>
           </Button>
 
           <Button className="hidden md:block cursor-pointer">Hire Me</Button>
@@ -63,20 +62,27 @@ export default function Navbar() {
             isOpen ? "block" : "hidden"
           )}
         >
-          <ul className="flex flex-col md:flex-row md:items-center font-medium gap-2 md:gap-4 mt-4 md:mt-0">
+          <ul className="flex flex-col md:flex-row md:items-center font-medium gap-1 mt-4 md:mt-0">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="block py-1.5 px-3 rounded-sm hover:bg-accent hover:text-accent-foreground transition-colors">
-                  {item.label}
-                </Link>
+                <Button variant="ghost" size="sm" className="w-full justify-start md:justify-center" asChild>
+                  <Link href={item.href}>
+                    {item.label}
+                  </Link>
+                </Button>
               </li>
             ))}
 
             <li className="w-full border-t border-border mt-3 pt-3 space-y-2 md:hidden">
-              <Button variant="outline" className="w-full cursor-pointer">
-                Unduh CV
+              <Button variant="ghost" className="w-full" asChild>
+                <Link href="/cv.pdf" download>
+                  Download CV
+                </Link>
               </Button>
-              <Button className="w-full cursor-pointer">Hire Me</Button>
+
+              <Button className="w-full" asChild>
+                <Link href="/contact">Hire Me</Link>
+              </Button>
             </li>
           </ul>
         </div>
