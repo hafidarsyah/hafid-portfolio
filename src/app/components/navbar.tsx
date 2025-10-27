@@ -37,7 +37,7 @@ export default function Navbar() {
         </Link>
 
         <div className="flex items-center gap-3 md:order-2">
-          <Button variant="ghost" className="hidden md:flex" asChild>
+          <Button variant="outline" className="hidden md:flex" asChild>
             <Link href="/cv.pdf" download>
               Download CV
             </Link>
@@ -74,7 +74,7 @@ export default function Navbar() {
             ))}
 
             <li className="w-full border-t border-border mt-3 pt-3 space-y-2 md:hidden">
-              <Button variant="ghost" className="w-full" asChild>
+              <Button variant="outline" className="w-full" asChild>
                 <Link href="/cv.pdf" download>
                   Download CV
                 </Link>
