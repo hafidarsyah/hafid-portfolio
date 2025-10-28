@@ -1,10 +1,11 @@
 import "./globals.css";
-import { ThemeProvider } from "./components/theme-provider";
-import type { Metadata } from "next";
-import Navbar from "./components/navbar";
+import { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
-const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Hafid Ardiansyah | Portfolio",
@@ -19,11 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} min-h-screen bg-background text-foreground antialiased`}
+        // className={`${inter.className} min-h-screen bg-background text-foreground antialiased`}
+        className={inter.className}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Navbar />
-          {children}
+          <main className="min-h-screen">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
